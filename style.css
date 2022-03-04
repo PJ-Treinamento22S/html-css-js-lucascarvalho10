@@ -9,27 +9,6 @@ html {
   scroll-behavior: smooth;
 }
 
-/* ====================================== Index ==================================== */
-
-.blue-rect {
-  position: absolute;
-  width: 112rem;
-  height: 52rem;
-  background: #0077b6;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
-  clip-path: polygon(0 0, 0 100%, 100% 100%);
-  transform: rotate(180deg);
-  transform: rotateX(180deg);
-  z-index: -10;
-}
-
-.content-index {
-  height: 75rem;
-  width: 36rem;
-  background-color: black;
-  z-index: 100;
-}
-
 /* ==================================== PERFIL ==================================== */
 /* header */
 
@@ -204,6 +183,7 @@ html {
   flex-direction: row;
 
   width: 64rem;
+  height: fit-content;
 
   /* sombra simples */
   filter: drop-shadow(0px 2px 1px rgba(0, 0, 0, 0.25));
@@ -249,7 +229,7 @@ html {
 
 .user-post-text {
   width: 44rem;
-  height: 3rem;
+  height: fit-content;
 
   font-family: Montserrat;
   font-style: normal;
@@ -388,6 +368,8 @@ html {
 
   width: 60rem;
   height: 24rem;
+
+  padding: 1.6rem;
 
   background: #f8f9fa;
 

@@ -26,7 +26,9 @@
         <div class="navigation-feed">
             <img src="assets/heart.svg" alt="curtir" class="icon-feed-menu">
             <img src="assets/pius.svg" alt="pius" class="icon-feed-menu piu-open-modal">
-            <img src="assets/person.svg" alt="perfil" class="icon-feed-menu">
+            <a href="pages/perfil.html">
+                <img src="assets/person.svg" alt="perfil" class="icon-feed-menu">
+            </a>
         </div>
     </header>
 
@@ -50,7 +52,7 @@
                 </div>
 
                 <div class="indication-feed">
-                    <div class="trending-feed">
+                    <div class="trending-feed friends-feed">
                         <h1 class="h1-feed">Mais pessoas</h1>
                         <div class="topics-piu">
                             <div class="img-topics"><img src="" alt=""></div>
@@ -72,18 +74,16 @@
             <h1 class="h1-feed">Piu<span class="light-color">Friends</span> </h1>
             <img src="assets/config.svg" alt="">
         </div>
-        <form action="">
-                <textarea class="piu-text" name="story" rows="5" cols="33" autocapitalize="sentences" autocomplete="on" maxlength="140">
-               
-                </textarea>    
-                <div class="janela-piu-envio">
-                    <div class="botoes">
-                        <button class="piu-btn" action="submit">Piu!</button>
-                        <button class="cancel-btn">Cancelar</button>
-                    </div>
-                    <p class="rules-text">leia nossas regras</p>
-                </div>
-        </form>
+        
+        <textarea class="piu-text" rows="5" cols="33" autocapitalize="sentences" autocomplete="off" maxlength="140" autofocus="off"></textarea>    
+        <div class="janela-piu-envio">
+            <div class="botoes">
+                <button class="piu-btn" action="submit">Piu!</button>
+                <button class="cancel-btn">Cancelar</button>
+            </div>
+            <p class="rules-text">leia nossas regras</p>
+        </div>
+       
     </div>
 
 </body>
