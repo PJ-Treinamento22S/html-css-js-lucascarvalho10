@@ -9,7 +9,28 @@ html {
   scroll-behavior: smooth;
 }
 
-/* =========== PERFIL =========== */
+/* ====================================== Index ==================================== */
+
+.blue-rect {
+  position: absolute;
+  width: 112rem;
+  height: 52rem;
+  background: #0077b6;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
+  clip-path: polygon(0 0, 0 100%, 100% 100%);
+  transform: rotate(180deg);
+  transform: rotateX(180deg);
+  z-index: -10;
+}
+
+.content-index {
+  height: 75rem;
+  width: 36rem;
+  background-color: black;
+  z-index: 100;
+}
+
+/* ==================================== PERFIL ==================================== */
 /* header */
 
 .body-perfil {
@@ -124,6 +145,8 @@ html {
   align-items: center;
   flex-wrap: wrap;
   justify-content: space-between;
+
+  background: #f8f9fa;
 }
 
 .navigation-feed {
@@ -181,10 +204,8 @@ html {
   flex-direction: row;
 
   width: 64rem;
-  height: 12rem;
 
   /* sombra simples */
-
   filter: drop-shadow(0px 2px 1px rgba(0, 0, 0, 0.25));
 
   margin: 3.2rem 0;
@@ -332,4 +353,141 @@ html {
   line-height: 2rem;
 
   color: #212529;
+}
+
+/* ================= Modal =============== */
+.modal-janela-piu {
+  position: fixed;
+  top: 10.4rem;
+  left: 28.6rem;
+
+  width: 80rem;
+  height: 50rem;
+  background: #e9ecef;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.header-modal-piu {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  margin: 6.4rem 9.3rem 2.4rem 9.7rem;
+}
+
+.light-color {
+  color: #48cae4;
+}
+
+.piu-text {
+  display: inline-block;
+  resize: none;
+
+  width: 60rem;
+  height: 24rem;
+
+  background: #f8f9fa;
+
+  box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.25);
+  border-radius: 3.2rem;
+
+  margin: 0 9.8rem 3.2rem 9.8rem;
+}
+
+.piu-text:active {
+  border: none;
+}
+
+.janela-piu-envio {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  margin: 0 9.8rem 3.2rem 9.8rem;
+}
+
+.piu-btn {
+  width: 12rem;
+  height: 4rem;
+
+  background: #48cae4;
+  border-radius: 1rem;
+
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  margin: 0px 1.6rem;
+
+  border: none;
+
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 1.6rem;
+  line-height: 3.2rem;
+
+  color: #f8f9fa;
+  transition: background 0.3s;
+}
+
+.cancel-btn {
+  width: 12rem;
+  height: 4rem;
+
+  background: #f8f9fa;
+  border-radius: 1rem;
+
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  margin: 0px 1.6rem;
+
+  border: none;
+
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 1.6rem;
+  line-height: 3.2rem;
+
+  color: #e34444;
+  transition: background 0.3s;
+}
+
+.cancel-btn:hover {
+  background: #d5d7d8;
+  cursor: pointer;
+}
+
+.piu-btn:hover {
+  background: #2d7d8d;
+  cursor: pointer;
+}
+
+.rules-text {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1.6rem;
+  line-height: 3.2rem;
+  color: #0077b6;
+}
+
+.rules-text:hover {
+  cursor: pointer;
+  color: #1f7bad;
+}
+
+.hidden {
+  display: none;
+}
+
+/* coloque blur em todos os elementos menos no elemento com a class .modal */
+.blur-bg > *:not(.modal-janela-piu) {
+  -webkit-filter: blur(8px);
+  filter: blur(8px);
 }
