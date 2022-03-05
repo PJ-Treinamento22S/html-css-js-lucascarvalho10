@@ -15,6 +15,7 @@ const text = document.querySelector('.rules-text');
 async function getData() {
     const rawData = await fetch('https://api.json-generator.com/templates/BQZ3wDrI6ts0/data?access_token=n7lhzp6uj5oi5goj0h2qify7mi2o8wrmebe3n5ad');
     const data = await rawData.json();
+  
     console.log(data);
     
     return data;
@@ -24,9 +25,9 @@ async function getData() {
 async function postingPosts() {
     const data = await getData();
 
-    data.forEach((usuario, index) => {
-        if (index < 4) {
-            const html = `<div class="post-template">
+    data.forEach(usuario=> {
+        
+            const html = `<div class="post-template" id="${usuario.id}">
                         <div class="user-info">
                             <div class="img-user">
                                 <img src="${usuario.user.photo}" alt="">
@@ -38,13 +39,13 @@ async function postingPosts() {
                         </div>
                         <div class="post-icons">
                             <img src="assets/share.svg" alt="compartilhar" class="icon-post">
-                            <img src="assets/heart-post.svg" alt="curtir postagem" class="icon-post">
-                            <img src="assets/more-option.svg" alt="mais opções" class="icon-post">
+                            <span id="${usuario.user.id}">0</span><img src="assets/heart-post.svg" alt="curtir postagem" class="icon-post" onclick="likeCounter('${usuario.user.id}')">
+                            <img src="assets/more-option.svg" alt="mais opções" class="icon-post" onclick="deletePiu('${usuario.id}')">
                         </div>
                     </div>`; 
             
             feed.insertAdjacentHTML('beforeend', html);
-        }      
+              
     })  
 }
 
@@ -90,7 +91,7 @@ enviarPiu.addEventListener('click', () => {
                     </div>
                     <div class="post-icons">
                         <img src="assets/share.svg" alt="compartilhar" class="icon-post">
-                        <img src="assets/heart-post.svg" alt="curtir postagem" class="icon-post">
+                        <span>0</span><img src="assets/heart-post.svg" alt="curtir postagem" class="icon-post">
                         <img src="assets/more-option.svg" alt="mais opções" class="icon-post">
                     </div>
                 </div>`; 
@@ -121,8 +122,11 @@ function findingPosts() {
 async function postingFinded() {
   const data = await getData();
 
+  // Limpando o feed antes da pesquisa   
+  document.querySelectorAll('.post-template').forEach(post => post.classList.add('hidden'));
+
   data.forEach(post => {
-      if (post.text.split(' ').includes(document.querySelector('.search-text').value)) {
+      if (post.user.username === (document.querySelector('.search-text').value)) {
           const piu = `<div class="post-template">
                         <div class="user-info">
                             <div class="img-user">
@@ -135,7 +139,7 @@ async function postingFinded() {
                         </div>
                         <div class="post-icons">
                             <img src="assets/share.svg" alt="compartilhar" class="icon-post">
-                            <img src="assets/heart-post.svg" alt="curtir postagem" class="icon-post">
+                            <span id="like-counter"></span><img src="assets/heart-post.svg" alt="curtir postagem" class="icon-post">
                             <img src="assets/more-option.svg" alt="mais opções" class="icon-post">
                         </div>
                     </div>`; 
@@ -146,4 +150,15 @@ async function postingFinded() {
       document.querySelector('.search-text').classList.add('hidden');
       document.querySelector('.search-piu').classList.remove('hidden');
   })
+}
+
+function deletePiu(id) {
+    document.getElementById(`${id}`).classList.add('hidden');
+}
+
+function likeCounter(self) {
+    console.log(self);
+    let likeCount = document.getElementById(`${self}`);
+
+    likeCount.innerText = parseInt(likeCount.innerText) + parseInt(1);
 }
