@@ -377,6 +377,11 @@ html {
   border-radius: 3.2rem;
 
   margin: 0 9.8rem 3.2rem 9.8rem;
+
+  font-family: Poppins;
+  font-style: normal;
+  font-size: 1.6rem;
+  line-height: 3.2rem;
 }
 
 .piu-text:active {
@@ -472,4 +477,51 @@ html {
 .blur-bg > *:not(.modal-janela-piu) {
   -webkit-filter: blur(8px);
   filter: blur(8px);
+}
+
+.search-text {
+  width: 32rem;
+  height: 4rem;
+
+  padding: 1.6rem;
+
+  background: #f8f9fa;
+  margin: 4.8rem auto 1.6rem auto;
+  border: 0.04rem solid rgb(82, 82, 82);
+
+  border-radius: 1.6rem;
+
+  font-family: Poppins;
+  font-style: normal;
+  font-size: 1.6rem;
+  line-height: 3.2rem;
+}
+
+.search-btn {
+  width: 12rem;
+  height: 4rem;
+
+  background: #48cae4;
+  border-radius: 1rem;
+
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  margin: 0 auto;
+
+  border: none;
+
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 1.6rem;
+  line-height: 3.2rem;
+
+  color: #f8f9fa;
+  transition: background 0.3s;
+}
+
+.search-btn:hover {
+  cursor: pointer;
+  background: #1f7bad;
 }

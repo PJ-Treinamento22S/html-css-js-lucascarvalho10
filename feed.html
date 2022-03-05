@@ -24,7 +24,7 @@
             <img src="assets/piupiuwerlogofeed.svg" alt="Logo do feed">
         </div>
         <div class="navigation-feed">
-            <img src="assets/heart.svg" alt="curtir" class="icon-feed-menu">
+            <img src="assets/lupa.svg" alt="pesquisar" class="icon-feed-menu search-piu" onclick="findingPosts()"> 
             <img src="assets/pius.svg" alt="pius" class="icon-feed-menu piu-open-modal">
             <a href="pages/perfil.html">
                 <img src="assets/person.svg" alt="perfil" class="icon-feed-menu">
@@ -75,13 +75,14 @@
             <img src="assets/config.svg" alt="">
         </div>
         
-        <textarea class="piu-text" rows="5" cols="33" autocapitalize="sentences" autocomplete="off" maxlength="140" autofocus="off"></textarea>    
+        <textarea class="piu-text" rows="5" cols="33" autocapitalize="sentences" autocomplete="off" maxlength="140" autofocus="on" onkeyup="digitField()"></textarea>    
         <div class="janela-piu-envio">
             <div class="botoes">
                 <button class="piu-btn" action="submit">Piu!</button>
                 <button class="cancel-btn">Cancelar</button>
             </div>
             <p class="rules-text">leia nossas regras</p>
+            <p class="rules-text counter-car"></p>
         </div>
        
     </div>
