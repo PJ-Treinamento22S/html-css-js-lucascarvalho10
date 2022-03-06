@@ -8,10 +8,11 @@ const janelaModal = document.querySelector('.modal-janela-piu');
 const bodyFeed = document.querySelector('.body-feed');
 const friendsFeed = document.querySelector('.friends-feed');
 const counterCar = document.querySelector('.counter-car');
+const configMenu = document.queryCommandIndeterm('.config-menu');
 
 const text = document.querySelector('.rules-text');
 
-// obteção de dados
+// obtenção de dados
 async function getData() {
     const rawData = await fetch('https://api.json-generator.com/templates/BQZ3wDrI6ts0/data?access_token=n7lhzp6uj5oi5goj0h2qify7mi2o8wrmebe3n5ad');
     const data = await rawData.json();
@@ -60,6 +61,10 @@ function digitField() {
     if (caracteres >= 140) {
         text.innerHTML = 'Não há mais espaço!'
         text.style.color='#e34444';
+    }
+    else {
+        text.innerHTML = 'leia nossas regras'
+        text.style.color='#0077b6';
     }
 }
 
@@ -112,7 +117,7 @@ enviarPiu.addEventListener('click', () => {
 })
 
 function findingPosts() {
-    const html = `<input type="text" placeholder="palavra-chave" class="search-text" autofocus="on">
+  const html = `<input type="text" placeholder="palavra-chave" class="search-text" autofocus="on">
   <input type="submit" value="Pesquisar" onclick="postingFinded()" class="search-btn">`
 
   feed.insertAdjacentHTML('afterbegin', html);

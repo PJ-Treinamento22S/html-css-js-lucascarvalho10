@@ -105,7 +105,7 @@ html {
   height: 4.2rem;
 }
 
-.header-icons-perfil img:first-child {
+.correct-margin {
   margin-left: 4.2rem;
 }
 /* ========================================= FEED ====================================== */
@@ -116,7 +116,7 @@ html {
 
 /* Feed Header */
 .header-feed {
-  margin: 2rem 8rem;
+  margin: 6rem 12rem;
 
   display: flex;
   flex-direction: row;
@@ -337,7 +337,7 @@ html {
   color: #212529;
 }
 
-/* ================= Modal =============== */
+/* ================= Modal de pius =============== */
 .modal-janela-piu {
   position: fixed;
   top: 10.4rem;
@@ -384,6 +384,8 @@ html {
   font-style: normal;
   font-size: 1.6rem;
   line-height: 3.2rem;
+
+  color: #212529;
 }
 
 .piu-text:active {
@@ -392,7 +394,7 @@ html {
 
 .janela-piu-envio {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
 
@@ -471,12 +473,126 @@ html {
   color: #1f7bad;
 }
 
+.align-bottom {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+}
+
+/* ================= Modal de configuração =============== */
+.config-modal {
+  position: fixed;
+  top: 10.4rem;
+  left: 28.6rem;
+
+  width: 80rem;
+  height: 50rem;
+  background: #e9ecef;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.config-label {
+  display: inline-block;
+  width: 32rem;
+  height: 4rem;
+
+  padding: 1.6rem;
+
+  background: #f8f9fa;
+  margin: 0.4rem auto 1.6rem auto;
+  border: 0.04rem solid rgb(82, 82, 82);
+
+  border-radius: 1.6rem;
+  text-align: center;
+
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 275;
+  font-size: 1.6rem;
+  line-height: 3.6rem;
+  color: #212529;
+}
+
+.config-label-desc {
+  display: inline-block;
+  width: 32rem;
+  height: 24rem;
+
+  padding: 1.6rem;
+  text-align: center;
+
+  background: #f8f9fa;
+  margin: 0.4rem auto 1.6rem auto;
+  border: 0.04rem solid rgb(82, 82, 82);
+
+  border-radius: 1.6rem;
+
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 275;
+  font-size: 1.6rem;
+  line-height: 3.6rem;
+  color: #212529;
+}
+
+.config-btn {
+  width: 12rem;
+  height: 4rem;
+
+  background: #0077b6;
+  border-radius: 1rem;
+  margin: 0 1.6rem;
+
+  border: none;
+
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 1.6rem;
+  line-height: 3.2rem;
+
+  color: #f8f9fa;
+  transition: background 0.3s;
+}
+
+.config-btn:hover {
+  background: #2d7d8d;
+  cursor: pointer;
+}
+
+/* ==========================MOdal de amigos =========================== */
+.friends-modal {
+  position: fixed;
+  top: 10.4rem;
+  left: 28.6rem;
+
+  width: 80rem;
+  height: 50rem;
+  background: #f8f9fa;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.janela-amigos {
+  margin: 4.8rem 16rem;
+}
+
+/* ====================== Opções de design ======================= */
+
 .hidden {
   display: none;
 }
 
 /* coloque blur em todos os elementos menos no elemento com a class .modal */
-.blur-bg > *:not(.modal-janela-piu) {
+.blur-bg > *:not(.nao-apaga) {
   -webkit-filter: blur(8px);
   filter: blur(8px);
 }
@@ -526,4 +642,22 @@ html {
 .search-btn:hover {
   cursor: pointer;
   background: #1f7bad;
+}
+
+.janela-piu-config {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 32rem;
+  padding: 0;
+  margin-bottom: 3.2rem;
+}
+
+/* ================================= Other screen size ===========================*/
+
+@media all and (max-width: 768px) {
+  body {
+    font-size: 48%;
+  }
 }

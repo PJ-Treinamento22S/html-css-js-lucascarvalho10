@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- CSS interno -->
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../styles/global.css">
 
     <!-- JS interno -->
-    <script src="global.js"></script>
-    <title>PiuPiuwer</title>
+    <script src="../scripts/perfil.js" defer></script>
+   
     <title>Perfil - PiuPiuwer</title>
 
     <!-- Fonts -->
@@ -18,10 +18,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Montserrat:wght@400;500;600;700&family=Poppins:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
 
-    <!-- JS -->
-    <script src="../global.js"></script>
+  
 </head>
 <body class="body-perfil"> 
+
     <header class="main-header">
         <div class="header-perfil">
             <div class="header-perfil-infos">
@@ -34,8 +34,8 @@
         </div>
 
         <div class="header-icons-perfil">
-            <img src="../assets/heart.svg" alt="curtir" class="icon-feed-menu">
-            <img src="../assets/config.svg" alt="configurações" class="icon-feed-menu">
+            <img src="../assets/heart.svg" alt="curtir" class="icon-feed-menu correct-margin open-friends">
+            <img src="../assets/config.svg" alt="configurações" class="icon-feed-menu config-menu">
             <a href="../feed.html">
                 <img src="../assets/home-btg.svg" alt="feed" class="icon-feed-menu">
             </a>
@@ -102,8 +102,47 @@
             </div>
 
         </section>
+    </main>
 
+    <!-- Modal de configurações -->
 
+    <div class="config-modal hidden nao-apaga">
+        <div class="header-modal-piu">
+            <h1 class="h1-feed">Piu<span class="light-color">Config</span> </h1>
+        </div>
+        
+        <input id="username" type="text" placeholder="username" class="config-label" autofocus="on">
+        <input id="nascimento" type="text" placeholder="nascimento" class="config-label" autofocus="off">
+        <input id="descricao" type="text" placeholder="descrição" class="config-label-desc" autofocus="off">
+
+        <div class="janela-piu-config">
+            <button class="config-btn" action="submit">Feito!</button>
+            <button class="cancel-btn">Cancelar</button>
+        </div>
+
+    </div>
+
+    <!-- Moda de amigos próximos -->
+
+    <div class="friends-modal nao-apaga hidden">
+        <div class="header-modal-piu">
+            <h1 class="h1-feed">Piu<span class="light-color">Friends</span> </h1>
+            <img src="../assets/x.svg" alt="" class="exit-x">
+        </div>
+        <div class="janela-amigos">
+            <div class="trending-feed friends-feed">
+                    <h3 class="friends-title">Segue|<span class="friends-title-soft">Seguidores</span></h3>
+                        
+                    <div class="topics-piu">
+                        <div class="img-topics"><img src="" alt=""></div>
+                            <div class="topic-desc">
+                                <h3 class="topic-name">nome do usuário</h3>
+                                <p class="topic-desc-text">decrição</p>
+                            </div>
+                        </div>
+                    </div>
+            </div>         
+    </div>
     
 </body>
 </html>
