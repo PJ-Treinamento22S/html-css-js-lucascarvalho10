@@ -5,7 +5,7 @@
 }
 
 html {
-  font-size: 62.5%;
+  font-size: 67%;
   scroll-behavior: smooth;
 }
 
@@ -165,6 +165,28 @@ html {
   gap: -3.2rem;
 }
 
+.scroll {
+  height: 64rem;
+  overflow: scroll;
+  padding: 0.8rem;
+}
+
+.scroll::-webkit-scrollbar {
+  width: 0.8rem;
+  background: #f8f9fa;
+}
+
+.scroll::-webkit-scrollbar-track {
+  background-color: #f8f9fa;
+  margin-left: 0.8rem;
+}
+
+.scroll::-webkit-scrollbar-thumb {
+  background: #d5d7d8;
+  border-radius: 0.8rem;
+  height: 20rem;
+}
+
 .h1-feed {
   font-family: Poppins;
   font-style: normal;
@@ -187,12 +209,13 @@ html {
   /* sombra simples */
   filter: drop-shadow(0px 2px 1px rgba(0, 0, 0, 0.25));
 
-  margin: 3.2rem 0;
+  margin: 1.6rem 0;
 
   background: #e9ecef;
   border-radius: 3.2rem;
 
   padding: 2rem;
+  position: relative;
 }
 
 .img-user {
@@ -225,7 +248,7 @@ html {
 }
 
 .user-post-text {
-  width: 44rem;
+  width: 40rem;
   height: fit-content;
 
   font-family: Montserrat;
@@ -240,16 +263,20 @@ html {
 .post-icons {
   display: flex;
   flex-direction: row;
-  gap: 0.4rem;
 
   color: #48cae4;
-  margin-top: 6rem;
-  margin-left: -4rem;
+  float: bottom;
+  position: absolute;
+  bottom: 1.6rem;
+  right: 3.2rem;
 }
 
 .icon-post {
   width: 2.4rem;
   height: 2.4rem;
+
+  margin-left: 0.4rem;
+
   transition: all 0.3s;
 }
 
@@ -261,6 +288,7 @@ html {
 
 .other-feed {
   width: 48rem;
+  margin-top: -0.8rem;
 }
 
 .trending-feed {
@@ -289,7 +317,7 @@ html {
   border-radius: 32px;
 
   flex: none;
-  margin: 3.2rem 0;
+  margin: 1.6rem 0;
 
   display: flex;
   flex-direction: row;
@@ -474,7 +502,7 @@ html {
 }
 
 .align-bottom {
-  width: 100%;
+  width: 80rem;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -501,16 +529,16 @@ html {
 .config-label {
   display: inline-block;
   width: 32rem;
-  height: 4rem;
+  height: 8rem;
 
   padding: 1.6rem;
 
   background: #f8f9fa;
-  margin: 0.4rem auto 1.6rem auto;
-  border: 0.04rem solid rgb(82, 82, 82);
+  margin: 0.4rem auto 0.4rem auto;
 
-  border-radius: 1.6rem;
+  border-radius: 0.8rem;
   text-align: center;
+  border: none;
 
   font-family: Poppins;
   font-style: normal;
@@ -530,9 +558,9 @@ html {
 
   background: #f8f9fa;
   margin: 0.4rem auto 1.6rem auto;
-  border: 0.04rem solid rgb(82, 82, 82);
 
-  border-radius: 1.6rem;
+  border-radius: 0.8rem;
+  border: none;
 
   font-family: Poppins;
   font-style: normal;
@@ -579,10 +607,26 @@ html {
 
   display: flex;
   flex-direction: column;
+
+  overflow: scroll;
 }
 
 .janela-amigos {
-  margin: 4.8rem 16rem;
+  margin: 0.8rem 16rem;
+}
+
+.friends-title {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 2.4rem;
+  line-height: 3.6rem;
+
+  color: #0077b6;
+}
+
+.friends-title-soft {
+  color: #212529;
 }
 
 /* ====================== Opções de design ======================= */
@@ -656,8 +700,32 @@ html {
 
 /* ================================= Other screen size ===========================*/
 
+@media all and (max-width: 1400px) {
+  html {
+    font-size: 62.5%;
+  }
+}
+
+@media all and (max-width: 960px) {
+  html {
+    font-size: 58%;
+  }
+}
+
 @media all and (max-width: 768px) {
-  body {
+  html {
     font-size: 48%;
+  }
+}
+
+@media all and (max-width: 480) {
+  hmtl {
+    font-size: 32%;
+  }
+}
+
+@media all and (max-width: 300) {
+  body {
+    font-size: 28%;
   }
 }

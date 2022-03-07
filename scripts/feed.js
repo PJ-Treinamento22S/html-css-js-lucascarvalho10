@@ -40,7 +40,7 @@ async function postingPosts() {
                         </div>
                         <div class="post-icons">
                             <img src="assets/share.svg" alt="compartilhar" class="icon-post">
-                            <span id="${usuario.user.id}">0</span><img src="assets/heart-post.svg" alt="curtir postagem" class="icon-post" onclick="likeCounter('${usuario.user.id}')">
+                            <span class="${usuario.id}">0</span><img src="assets/heart-post.svg" alt="curtir postagem" class="icon-post" onclick="likeCounter('${usuario.id}')">
                             <img src="assets/more-option.svg" alt="mais opções" class="icon-post" onclick="deletePiu('${usuario.id}')">
                         </div>
                     </div>`; 
@@ -117,7 +117,7 @@ enviarPiu.addEventListener('click', () => {
 })
 
 function findingPosts() {
-  const html = `<input type="text" placeholder="palavra-chave" class="search-text" autofocus="on">
+  const html = `<input type="text" placeholder="username" class="search-text" autofocus="on">
   <input type="submit" value="Pesquisar" onclick="postingFinded()" class="search-btn">`
 
   feed.insertAdjacentHTML('afterbegin', html);
@@ -163,7 +163,8 @@ function deletePiu(id) {
 
 function likeCounter(self) {
     console.log(self);
-    let likeCount = document.getElementById(`${self}`);
+    let likeCount = document.getElementsByClassName(`${self}`);
+    console.log(likeCount);
 
-    likeCount.innerText = parseInt(likeCount.innerText) + parseInt(1);
+    likeCount[0].innerText = parseInt(likeCount[0].innerText) + parseInt(1);
 }
