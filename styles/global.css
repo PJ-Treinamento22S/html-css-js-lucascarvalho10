@@ -5,7 +5,7 @@
 }
 
 html {
-  font-size: 67%;
+  font-size: 66.5%;
   scroll-behavior: smooth;
 }
 
@@ -155,7 +155,7 @@ html {
   flex-direction: row;
   justify-content: flex-start;
   flex-wrap: wrap;
-  gap: 6.4rem;
+  gap: 3.2rem;
   margin: 0 0 2.4rem 0;
 }
 
